@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "imelangrestorer",
+  "version": "${version}",
+
+  "name": "IMELangRestorer",
+  "description": "Restore the IME language status after you switch back to the edit box, so that it won't change after pressing Shift.",
+  "authors": [
+    "Lumine1909"
+  ],
+  "contact": {
+    "sources": "https://github.com/Lumine1909/IMELangRestorer"
+  },
+
+  "license": "GPLv3",
+
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "io.github.lumine1909.imelangrestorer.ImeLangRestorerClient"
+    ]
+  },
+  "mixins": [
+    "imelangrestorer.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "fabric-api": "*",
+    "minecraft": ">=26.2"
+  }
+}
