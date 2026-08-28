@@ -60,11 +60,7 @@ public final class WindowsImeUtil {
         }
 
         // HIMC ImmGetContext(HWND hWnd)
-        final long himc = JNI.callPP(
-            hwnd,
-            IMM_GET_CONTEXT
-        );
-
+        final long himc = JNI.callPP(hwnd, IMM_GET_CONTEXT);
         if (himc == 0L) {
             return false;
         }
@@ -78,7 +74,6 @@ public final class WindowsImeUtil {
             if (result == 0) {
                 return false;
             }
-
             return (conversion.get(0) & IME_CMODE_NATIVE) != 0;
         } finally {
             // BOOL ImmReleaseContext(HWND hWnd, HIMC hIMC)
@@ -105,7 +100,6 @@ public final class WindowsImeUtil {
 
         // HIMC ImmGetContext(HWND hWnd)
         final long himc = JNI.callPP(hwnd, IMM_GET_CONTEXT);
-
         if (himc == 0L) {
             return;
         }
