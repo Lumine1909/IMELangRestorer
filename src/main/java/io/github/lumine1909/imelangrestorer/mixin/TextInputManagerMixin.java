@@ -3,10 +3,12 @@ package io.github.lumine1909.imelangrestorer.mixin;
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.mojang.blaze3d.platform.TextInputManager;
-import io.github.lumine1909.imelangrestorer.util.WindowsImeUtil;
-import org.spongepowered.asm.mixin.*;
-
 import com.mojang.blaze3d.platform.Window;
+import io.github.lumine1909.imelangrestorer.util.WindowsImeUtil;
+import org.spongepowered.asm.mixin.Final;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(TextInputManager.class)
 public abstract class TextInputManagerMixin {

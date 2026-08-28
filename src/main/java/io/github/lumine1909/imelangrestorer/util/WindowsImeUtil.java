@@ -11,8 +11,7 @@ import java.nio.IntBuffer;
 import static org.lwjgl.system.Checks.CHECKS;
 import static org.lwjgl.system.Checks.check;
 import static org.lwjgl.system.Library.loadNative;
-
-import static org.lwjgl.system.MemoryUtil.*;
+import static org.lwjgl.system.MemoryUtil.memAddress;
 
 public final class WindowsImeUtil {
 
@@ -23,7 +22,7 @@ public final class WindowsImeUtil {
     private static final long IMM_GET_CONVERSION_STATUS;
     private static final long IMM_SET_CONVERSION_STATUS;
 
-    private static final int IME_CMODE_NATIVE = 0x0001;
+    private static final int IME_CMODE_NATIVE = 1024 | 1;
 
     static {
         if (Platform.get() == Platform.WINDOWS) {
@@ -86,7 +85,6 @@ public final class WindowsImeUtil {
             JNI.callPPI(hwnd, himc, IMM_RELEASE_CONTEXT);
         }
     }
-
 
     public static void setNative(final long glfwWindow, final boolean nativeMode) {
         if (IMM32 == null) {
